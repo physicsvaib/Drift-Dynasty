@@ -24,7 +24,8 @@ namespace Phyw.Car
 
     private void Start()
     {
-      offset = sphere.position - car.position;
+      offset = new Vector3(0, 0.7f, 0);
+      //sphere.maxLinearVelocity = 100;
     }
 
     #region UnityMethods
@@ -43,15 +44,12 @@ namespace Phyw.Car
         normal.up = Vector3.Lerp(normal.up, hit.normal, lerpSpeed);
         //normal.up = hit.normal;
         //normal.Rotate(0, transform.eulerAngles.y, 0);
-        print($"The collider is there {hit.collider.name}");
-        sphere.AddForce(car.transform.forward * vec.y * 100 * speed, ForceMode.Impulse);
+
+        int speedMul = (hit.collider.tag == "Mud") ? 60 : 100;
+        sphere.AddForce(car.transform.forward * vec.y * speedMul * speed, ForceMode.Acceleration);
       }
       car.Rotate(0, vec.x * rotSpeed, 0);
       car.position = sphere.position - offset;
-    }
-    private void Update()
-    {
-
     }
     #endregion
 

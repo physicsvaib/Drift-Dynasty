@@ -1,10 +1,11 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Phyw.Car
 {
 
-  public class Movement : MonoBehaviour
+  public class Movement : NetworkBehaviour
   {
     #region Variables
     [SerializeField] private Rigidbody rb;
@@ -18,6 +19,12 @@ namespace Phyw.Car
     #endregion
 
     #region UnityMethods
+
+    private void OnEnable()
+    {
+      if (!IsOwner) enabled = false;
+    }
+
     private void Update()
     {
       if (isPressingMove)
