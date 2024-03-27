@@ -8,5 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Drift Dynasty/Scenes/Sample3.unity
     guid: 8ac5d299175dad742aee76b4192f46ab
+  - enabled: 1
+    path: Assets/Drift Dynasty/Scenes/WaypointsLevel.unity
+    guid: bd18ae6e87d14854c91ad7b2ae103750
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

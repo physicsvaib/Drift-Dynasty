@@ -19,12 +19,12 @@ namespace Phyw.Car
     private Vector2 vec;
     private RaycastHit hit;
 
-    private bool isPressingMove;
+    //private bool isPressingMove;
     #endregion
 
     private void Start()
     {
-      offset = new Vector3(0, 0.7f, 0);
+      offset = new Vector3(0, 0.6f, 0);
       //sphere.maxLinearVelocity = 100;
     }
 
@@ -58,14 +58,14 @@ namespace Phyw.Car
     public void Move(InputAction.CallbackContext ctx)
     {
 
-      if (ctx.phase == InputActionPhase.Started)
-      {
-        isPressingMove = true;
-      }
-      else if (ctx.phase == InputActionPhase.Canceled)
-      {
-        isPressingMove = false;
-      }
+      //if (ctx.phase == InputActionPhase.Started)
+      //{
+      //  isPressingMove = true;
+      //}
+      //else if (ctx.phase == InputActionPhase.Canceled)
+      //{
+      //  isPressingMove = false;
+      //}
       vec = ctx.ReadValue<Vector2>();
     }
     #endregion
